@@ -9,13 +9,14 @@ function apagar(){
    document.querySelector(".tela").innerHTML = tela.substring(0, tela.length -1);
 }
 function calcular(){
-    let tela = document.querySelector(".tela").innerHTML;
-    document.querySelector(".tela").innerHTML = eval(tela);
-    if(tela){
-        document.querySelector(".tela").innerHTML = eval(tela);
+    let conta = document.querySelector(".tela").innerHTML;  
+    try{
+        let tela = eval(conta)
+        document.querySelector('.tela').innerHTML = tela;
     }
-    else{
-        document.querySelector(".tela").innerHTML = "nenhum comando...";
+    catch(error){
+            document.querySelector('.tela').innerHTML = 'Erro';
+        }
     }
 
-}
+
